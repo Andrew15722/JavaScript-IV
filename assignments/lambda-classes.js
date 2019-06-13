@@ -27,6 +27,10 @@ class Instructor extends Person {
     grade(obj, subject) {
         return `${obj.name} receives a perfect score on ${subject}`;
     }
+
+    grading (obj) {
+        return`Your grade is ${obj.grade = Math.round(Math.random() * 100)}`; // second stretch goal///////////////////
+    }
 }    
 
 // is also an  extension of person
@@ -36,6 +40,7 @@ class Student extends Person {
         this.previousBackground = prop.previousBackground
         this.className = prop.className
         this.favSubjects = prop.favSubjects
+        this.grade = prop.grade    // First stretch goal ///////////////////////
     }
 
     listsSubjects() {
@@ -50,7 +55,7 @@ class Student extends Person {
 
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}`;
-    }
+    }  
 };
 
 // is an extension of instructor
@@ -71,7 +76,7 @@ class ProjectManager extends Instructor {
 }
 
 
-
+//methods
 const fred = new Instructor({
     name: 'Fred',
     location: 'Bedrock',
@@ -118,7 +123,8 @@ const andrew = new Student ({
     location: 'Arizona',
     previousBackground: 'Call center',
     className:'WEB 21',
-    favSubjects:['CSS', 'Javascript', 'HTML']
+    favSubjects:['CSS', 'Javascript', 'HTML'],
+    grade: 80,
   });
 
 const isaiah = new Student({
@@ -128,12 +134,14 @@ const isaiah = new Student({
     previousBackground: 'High School last month',
     className: 'Web21',
     favSubjects: ['Html', 'CSS', 'JavaScript'],
+    grade: 95,
 });
-
-
-  console.log(austin.standUp('WEB21'))
+ 
   console.log(austin.debugsCode(isaiah, "Sprint challenge 1"));
   console.log(andrew.PRAssignment('Front end development'));
   console.log(fred.demo('Math'));
   console.log(andrew.listsSubjects());
-  console.log(dan.speak())
+  console.log(dan.speak());
+  console.log(isaiah.grade);
+  console.log(austin.grading(andrew))
+  console.log(andrew.graduate());
