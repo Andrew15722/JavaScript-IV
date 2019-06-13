@@ -25,8 +25,8 @@ Prototype Refactor
 //ES6 syntax
 class GameObject {
     constructor(obj) {
-        this.createdAt = obj.createdAt,
-        this.name = obj.name,
+        this.createdAt = obj.createdAt
+        this.name = obj.name
         this.dimensions = obj.dimensions 
         this.healthPoints = obj.healthPoints
     }
@@ -87,14 +87,14 @@ class CharacterStats extends GameObject {
 // ES6 syntax
 class Humanoid extends GameObject {
     constructor(obj) {
-        super(obj);
+        super(obj); 
         this.team = obj.team,
         this.weapons = obj.weapons,
         this.language = obj.language
     }
 
     destroy() {
-        return `${this.name} was removed from the game.`
+        return `${this.name} has been destroyed.`
     }
 
     takeDamage() {
